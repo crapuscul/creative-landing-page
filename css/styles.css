@@ -2,24 +2,36 @@ body{
 
     margin: 0;
     padding: 0;
+    border: none;
     box-sizing: border-box;   
     font-family: "Barlow", sans-serif;
     font-weight: 600;
     font-style: normal;
+        
+    /* overflow: hidden; */
     
 }
-header{    background-image: url(/images/desktop/image-header.jpg);
-    background-size: 100%;
-    min-height: 1000px;
-    background-repeat: no-repeat;}
+
+header{
+    background-image: url(/images/desktop/image-header.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    
+}
 
 .nav-bar{
-
+    margin-bottom: auto;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0px 4%;
-    height: 100%;
+    padding: 8px 4%;
+   
 
 }
 .logo{
@@ -48,17 +60,16 @@ button{
     border: none;
     border-radius: 50px;
     cursor: pointer;
-        transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
 }
 button:hover{
     background:  #7bd3ff;
     color: white;
 }
 h1{
-    padding: 80px;
     display: flex;
-    justify-content: center;
     text-align: center;
+    justify-content: center;
     color: white;
     font-family: "Fraunces", serif;
     font-weight: 900;
@@ -69,11 +80,99 @@ h1{
     margin-left: auto;
     margin-right: auto;
 }
+
+
 .grid-container{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-areas: 
+    "item1 item2"
+    "item3 item4"
+    "item5 item6" ;
+    /* grid-template-columns: auto auto; */
+    gap: 0; /* Ensure no gap between grid items */
+    padding: 0;
+    margin: auto;
+    box-sizing:border-box;
+    justify-content: center;
+    max-width: 100%;
+    overflow: hidden;
+    
+
+}
+.grid-item1, .grid-item4{
+    /* background-color: white; */
+    display: flex;
+    align-items: start;
+    justify-content:center;
+    flex-direction: column;
+    padding: auto 10%;
+    border: none;
+    margin: 0;
+    
+}
+h2{
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    color: hsl(212, 27%, 19%);
+   
+    font-size: 30px;
 
 }
 .grid-item1{
-    background-color: white;
+    grid-area: item1; 
+    
+}
+.grid-item2{
+    grid-area: item2; 
+    height: fit-content;
+    
+}
+.grid-item4{
+    grid-area: item4; 
+    
+}
+
+.grid-item3{
+border: none;
+grid-area: item3; 
+
+}
+.grid-item1 p, .grid-item4 p{
+    color: hsl(232, 10%, 55%);
+    padding-bottom: 10px;
+}
+.grid-item1 a, .grid-item4 a{
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: hsl(212, 27%, 19%);
+
+}
+
+.grid-item1 a{
+    text-decoration: underline yellow;
+    text-underline-offset:  0.44px;
+    text-decoration-thickness: 10px;
+
+}
+.grid-item4 a{
+    text-decoration: underline rgb(251, 184, 174);
+    text-underline-offset:  0.44px;
+    text-decoration-thickness: 10px;
+
+}
+.grid-item5{
+    border: none;
+    background-image: url("/images/desktop/image-graphic-design.jpg");
+    background-repeat: no-repeat;
+    background-size:auto;
+    /* height: 100vh; */
+
+}
+.grid-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60vh;
 }
