@@ -1,3 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Barlow:wght@600&family=Dancing+Script&family=Fraunces:ital,wght@0,700;1,900&family=Karma:wght@300&family=Kumbh+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Barlow:wght@400&family=Dancing+Script&family=Fraunces:ital,wght@0,700;1,900&family=Karma:wght@300&family=Kumbh+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Barlow:wght@900&family=Dancing+Script&family=Fraunces:ital,wght@0,700;1,900&family=Karma:wght@300&family=Kumbh+Sans:wght@400;700&display=swap');
+
+
+/* Declaration of variables in the root element 
+using the :root selector.
+
+N/B: In HTML, the root element is always the html element */
+
+
+:root{
+    /* color variables */
+    --Soft-red: hsl(7, 99%, 70%);
+    --learn-more-soft-red: hsla(7, 99%, 70%, 0.3);
+    --Yellow: hsl(51, 100%, 49%);
+    --learn-more-yellow: hsla(51, 100%, 49%, 0.3);
+    --graphic-design-color: hsl(167, 40%, 24%);
+    --photography-color: hsl(198, 62%, 26%);
+    --footer-color: hsl(168, 34%, 41%);
+    --footer-bg-color: hsla(168, 60%, 45%, 0.493);
+    --Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --Very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --Dark-grayish-blue: hsl(232, 10%, 55%);
+    --Grayish-blue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --floral-white: rgba(255, 250, 240, 0.733);
+    /* font variables */
+
+    --header-font: 'Fraunces', serif;
+    --body-font: 'Barlow', sans-serif;
+}
+
+
+
+
 body{
 
     margin: 0;
@@ -82,102 +119,79 @@ h1{
     margin-bottom: 45vh;
 }
 
+.headers{
+    font-family: var(--header-font);
+}
 
-.grid-container{
+/* grid styling */
+
+.main-grid{
     display: grid;
-    grid-template-areas: 
-    "item1 item2"
-    "item3 item4"
-    "item5 item6" ;
-    /* grid-template-columns: auto auto; */
-    gap: 0; /* Ensure no gap between grid items */
-    padding: 0;
-    margin: auto;
-    box-sizing:border-box;
-    justify-content: center;
-    max-width: 100%;
+}
+.grid-imgs{
+    width: 100%;
     height: 100%;
-    /* overflow: hidden; */
-    
-
 }
-.grid-item1, .grid-item4{
-    /* background-color: white; */
+.main-rows{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    background-color: var(--floral-white);
+}
+.articles{
     display: flex;
-    align-items: start;
-    justify-content:center;
-    flex-direction: column;
-    padding: auto 10%;
-    border: none;
-    margin: 0;
-    
-}
-h2{
-    font-family: "Fraunces", serif;
-    font-weight: 700;
-    color: hsl(212, 27%, 19%);
-   
-    font-size: 30px;
-
-}
-.grid-item1{
-    grid-area: item1; 
-    
-}
-.grid-item2{
-    grid-area: item2; 
-    height: fit-content;
-    
-}
-.grid-item4{
-    grid-area: item4; 
-    
-}
-
-.grid-item3{
-border: none;
-grid-area: item3; 
-
-}
-.grid-item1 p, .grid-item4 p{
-    color: hsl(232, 10%, 55%);
-    padding-bottom: 10px;
-}
-.grid-item1 a, .grid-item4 a{
-    font-family: "Fraunces", serif;
-    font-weight: 700;
-    font-size: 18px;
-    color: hsl(212, 27%, 19%);
-
-}
-
-.grid-item1 a{
-    text-decoration: underline yellow;
-    text-underline-offset:  0.44px;
-    text-decoration-thickness: 10px;
-
-}
-.grid-item4 a{
-    text-decoration: underline rgb(251, 184, 174);
-    text-underline-offset:  0.44px;
-    text-decoration-thickness: 10px;
-
-}
-.grid-item5{
-    border: none;
-    background-image: url("/images/desktop/image-graphic-design.jpg");
-    background-repeat: no-repeat;
-    background-size:auto;
-    /* height: 100vh; */
-
-}
-.grid-item6{
-    background-image: url("/images/desktop/image-photography.jpg");
-}
-.grid-content{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding-top: 60vh;
+    flex-direction: column;
+    row-gap: 2vmax;
+    margin:0 auto;
+    width: 60%;
+   
+}
+.article-headers{
+    color: var(--Very-dark-desaturated-blue);
+}
+.article-txt{
+    line-height: 1.3rem;
+    font-family: var(--body-font);
+    font-weight: 510;
+    color: var(--Dark-grayish-blue);
+    font-size: .9rem;
+}
+.learn-more-link{
+    display: grid;
+    justify-items: center;
+    width: max-content;
+    color: var(--Very-dark-desaturated-blue);
+    font-family: var(--header-font);
+    font-size: .9rem;
+    text-transform: uppercase;
+    text-decoration-line: none;
+    
+    
+    
+}
+.learn-more-decoration{
+
+    height: .6rem;
+    width: 110%;
+    transform: translateY(-.45rem);
+    border-radius: .5rem;
+    transition: .2s ease-in-out;
+}
+.yellow{
+    background-color: var(--learn-more-yellow);
+}
+.yellow:hover{
+    background-color: var(--Yellow);
+    transition: .2s ease-in-out;    
+}
+.pink{
+    background-color: var(--learn-more-soft-red);
+}
+.pink:hover{
+    background-color: var(red);
+    transition: .2s ease-in-out;
+}
+
+.article, .grid-imgs{
+    height: clamp(18rem, 35vmax, 27rem);
 }
