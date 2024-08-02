@@ -37,6 +37,7 @@ N/B: In HTML, the root element is always the html element */
 
 body{
     /* min-width: 700px; */
+    background-color:  var(--floral-white);;
     margin: 0;
     padding: 0;
     border: none;
@@ -67,7 +68,7 @@ header{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 8px 4%;
+    padding: 16px 4%;
    
 
 }
@@ -191,7 +192,7 @@ h1{
     background-color: var(--learn-more-soft-red);
 }
 .pink:hover{
-    background-color: var(red);
+    background-color: var(--Soft-red);
     transition: .2s ease-in-out;
 }
 
@@ -227,7 +228,8 @@ h1{
 }
 /* testimonials */
 .testimonials{
-    margin: 10%;
+    background-color: var(--floral-white);
+    margin: 10% 5%;
 
 }
 .testimonials img{
@@ -237,6 +239,9 @@ h1{
 }
 .testimonials h3{
     text-align: center;
+    color: var(--Grayish-blue);
+    font-family: var(--header-font);
+    letter-spacing: 8px;
 }
 .clients{
     padding-top: 5%;
@@ -245,7 +250,34 @@ h1{
     text-align: center;
     justify-content: center;
     flex-direction: row;
-   
+}
+.client1, .client2, .client3{
+    padding-left: 10px;
+    padding-right: 10px;
+
+ 
+    
+}
+.clients p{
+    color: var(--Very-dark-grayish-blue);
+}
+.clients h4{
+    padding-top: 26px;
+    color: var(--Very-dark-desaturated-blue);
+    font-family: var(--header-font);
+    font-weight: 900;
+}
+.clients .job{
+    
+    color: var(--Grayish-blue);
+}
+.imgGallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+.imgGallery img{
+    width: 100%;
 }
 /* responsive Design */
 @media screen and (max-width:653px){
@@ -273,10 +305,17 @@ h1{
     .nav-bar{
         display: flex;
     }
+    .clients{
+        flex-direction: column;
+    }
+    .imgGallery{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
 }
 /* Responsive Hero Section */
 @media screen and (orientation: landscape) and (max-height: 580px){
     .header {
         row-gap: clamp(3rem, 6vmax, 7rem);
     }
-}
+}}
