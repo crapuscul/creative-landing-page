@@ -108,6 +108,21 @@ button:hover{
     background:  #7bd3ff;
     color: white;
 }
+.hamburger{
+    display: none;
+    cursor: pointer;
+
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
 h1{
     display: flex;
     text-align: center;
@@ -127,6 +142,7 @@ h1{
 .headers{
     font-family: var(--header-font);
 }
+
 
 /* grid styling */
 
@@ -313,17 +329,76 @@ footer{
     padding-top: 40px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
    column-gap: 2vmax;;
 
 }
 /* responsive Design */
 @media screen and (max-width:653px){
+    .hamburger{
+          display: block;
+        
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-bar-menu{
+
+        transform: translateX(-50%);
+        position: fixed;
+        left: -100%; /* Start off-screen */
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 80%;  /* Set to 50% of the screen width */
+        height: 50%;
+        text-align: center;
+        transition: 0.3s;     
+    }
+    .nav-bar-menu.active{
+        left: 50%;  /* Center the menu horizontally */
+        transform: translateX(-50%); /* Center it within the viewport */
+        
+    }
+
 
     .nav_links{
-        display: none;
+        height: auto;
+        gap: 16px;
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .nav_links li a{
+        color: var(--Dark-grayish-blue);
     }
     .cta{
         display: flex;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        
+        
+    }
+    button{
+        background: var(--Yellow);
+        font-family: var(--header-font);
+        font-weight: 800;
+        color: var(--Very-dark-desaturated-blue);
+    }
+    button:hover{
+        background:  #7bd3ff;
+        color: white;
     }
     .main-rows{
         grid-template-columns: 100%;
