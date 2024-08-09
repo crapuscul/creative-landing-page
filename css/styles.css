@@ -40,6 +40,7 @@ N/B: In HTML, the root element is always the html element */
 
 body{
     /* min-width: 700px; */
+    overflow-x: hidden;
     background-color:  var(--floral-white);;
     margin: 0;
     padding: 0;
@@ -48,6 +49,7 @@ body{
     font-family: "Barlow", sans-serif;
     font-weight: 600;
     font-style: normal;
+    box-sizing: border-box;
         
     /* overflow: hidden; */
     
@@ -62,23 +64,26 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    
+    min-width: 100%;
+    box-sizing: border-box;
+ 
 }
 
 .nav-bar{
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: auto;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 24px 4%;
-   
 
 }
 .logo{
     cursor: pointer;
     margin-right: auto;
+}
+.nav-bar-menu{
+    margin-right: 4%;
 }
 .nav_links{
     list-style-type: none;
@@ -111,6 +116,7 @@ button:hover{
 .hamburger{
     display: none;
     cursor: pointer;
+    margin-right: 4%;
 
 }
 .bar{
@@ -131,6 +137,7 @@ h1{
     font-family: "Fraunces", serif;
     font-weight: 900;
     font-size: 60px;
+    margin: 0;
 }
 .arrowicon{
     display: block;
@@ -153,6 +160,22 @@ h1{
 .grid-imgs{
     width: 100%;
     height: 100%;
+}
+
+#transform-mobile{
+    display: none;
+}
+
+#standout-mobile{
+display: none;
+}
+
+#cherry-mobile{
+    display: none;
+}
+
+#photography-mobile{
+    display: none;
 }
 .main-rows{
     display: grid;
@@ -424,6 +447,30 @@ footer{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         
+}
+#transform-desktop{
+    display: none;
+}
+#transform-mobile{
+    display: block;
+}
+#standout-desktop{
+    display: none;
+    }
+#standout-mobile{
+display: block;
+}
+#cherry-desktop{
+    display: none;
+}
+#cherry-mobile{
+    display: block;
+}
+#photography-desktop{
+    display: none;
+}
+#photography-mobile{
+    display: block;
 }
 /* Responsive Hero Section */
 @media screen and (orientation: landscape) and (max-height: 580px){
